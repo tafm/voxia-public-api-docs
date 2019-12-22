@@ -4,7 +4,12 @@
 
 ### Antes de começar
 1. Obtenha a ApiKey que irá permitir acesso da sua aplicação [Getting Started](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/c/Guides/Getting%20Started).
-2. Obtenha  o token de autenticação que identificará e autenticará seu usuário nas chamadas à API na página de preferências de usuário no Voxia
+2. Obtenha  o token de conta de serviço (`SA_TOKEN`) na página de preferências do usuário no voxia 
+3. Obtenha o `ACCESS_TOKEN` que identificará e autenticará seu usuário nas chamadas à API na página de preferências de usuário no Voxia, este token tem validade de uma hora e pode ser obtido com um POST na rota `v1/auth/serviceaccount/getAccessToken`
+
+```bash
+curl -X POST -H "Authorization: [SA_TOKEN]" "https://voxia-public-api-esp-agskifmnha-uc.a.run.app/v1/auth/serviceaccount/getAccessToken?key=[SUA-API-KEY]"
+```
 
 ### Faça requisição para criar uma nova Mídia local
 1. Envie uma requisição POST para a api [/files/media](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/post).
