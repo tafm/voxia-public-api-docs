@@ -99,7 +99,7 @@ As transcrições automáticas levam em média metade do tempo de duração da m
 
 Quando finalizada a transcrição, você pode realizar a exportação do que foi transcrito para diversos formatos: [DOCX](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/%7BmediaId%7D/export/docx/post), [PDF](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/%7BmediaId%7D/export/pdf/post), [JSON](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/%7BmediaId%7D/export/json/post), [subtitle](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/%7BmediaId%7D/export/subtitle/post), entre outros. Para exportar no formato JSON:
 1. Envie uma requisição POST para a api [/files/media/{mediaId}/export/json](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/%7BmediaId%7D/export/json/post) em que `{mediaId}` é o ID da sua mídia retorna pela requisição POST inicial na API [/files/media](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/post).
-`curl -X POST -H 'Content-Type: application/json' -d '{"source":{"origin"},"password":"something"}' https://voxia-public-api-esp-agskifmnha-uc.a.run.app/v1/files/media/{mediaId}/export/json?key=[SUA-API-KEY]`
+`curl -X POST -H 'Authorization: [SEU-TOKEN]' https://voxia-public-api-esp-agskifmnha-uc.a.run.app/v1/files/media/{mediaId}/export/json?key=[SUA-API-KEY]`
 2. Salve o JSON retornado com o array de parágrafos no seguinte formato:
 
 ```json
