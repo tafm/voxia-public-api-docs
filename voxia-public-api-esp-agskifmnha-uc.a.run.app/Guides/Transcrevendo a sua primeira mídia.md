@@ -91,7 +91,7 @@ cat "[caminho-para-minha-mídia.mp4]" | curl -X PUT -H 'Content-Type: [formato d
 As transcrições automáticas levam em média metade do tempo de duração da mídia enviada. Esse tempo pode variar devido à fila de requisições. Depois de realizar o upload da mídia aguarde alguns instantes e comece à verificar se a transcrição da sua mídia foi finalizada. Para realizar essa verificação:
 
 1. Envie uma requisição GET para a api [/files/media/{mediaId}](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/%7BmediaId%7D/get) em que `{mediaId}` é o ID da sua mídia retorna pela requisição POST inicial na API [/files/media](https://endpointsportal.audfacil.cloud.goog/docs/voxia-public-api-esp-agskifmnha-uc.a.run.app/1/routes/files/media/post).
-`curl -X POST -H 'Content-Type: application/json' -d '{"source":{"origin"},"password":"something"}' https://voxia-public-api-esp-agskifmnha-uc.a.run.app/v1/files/media?key=[SUA-API-KEY]`
+`curl -X GET -H 'Authorization: [SEU-TOKEN]' https://voxia-public-api-esp-agskifmnha-uc.a.run.app/v1/files/media/[MEDIA-ID]?key=[SUA-API-KEY]`
 2. Caso o parâmetro `finishedAt` tenha o valor diferente de `null`, pode considerar que a transcrição da mídia foi finalizada.
 
 
